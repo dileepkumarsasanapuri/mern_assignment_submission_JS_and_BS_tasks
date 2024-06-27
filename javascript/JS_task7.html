@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Train Animation</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .train-container {
+            position: relative;
+            width: 100%;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+        #train {
+            position: absolute;
+            height: 50px;
+            width: 100px;
+            animation: moveTrain 5s linear infinite paused;
+        }
+        button{
+            align-items: center;
+            justify-content: center;
+        }
+        @keyframes moveTrain {
+            from {
+                left: 0;
+            }
+            to {
+                left: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="train-container">
+        <img id="train" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcyVkj8PFdR3Lvc6I2qst2hDBgyqM_zGcxQw&s" alt="Train" />
+    </div>
+    <div class="control-container">
+        <p><b>Click the following buttons to handle animation</b></p>
+        <button onclick="startAnimation()">Start</button>
+        <button onclick="stopAnimation()">Stop</button>
+    </div>
+
+    <script>
+        function startAnimation() {
+            document.getElementById("train").style.animationPlayState = "running";
+        }
+
+        function stopAnimation() {
+            document.getElementById("train").style.animationPlayState = "paused";
+        }
+    </script>
+</body>
+</html>

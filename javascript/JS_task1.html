@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reversed Number</title>
+</head>
+<body>
+    <h1>Reverse a Number</h1>
+    <p>Sample Number : <input type="text" id="sample-number" oninput="updation()"></p>
+    <p>Reversed Number : <span id="reversed-number"></span></p>
+
+    <script>
+        function reverseNumber(number) {
+            let numberStr = number.toString();
+            let reversedStr = numberStr.split('').reverse().join('');
+            let reversedNumber = parseInt(reversedStr);
+            return reversedNumber;
+        }
+         
+        function updation(){
+        let sampleNumber = document.getElementById('sample-number').value;
+        let reversed = reverseNumber(sampleNumber);
+        document.getElementById('reversed-number').textContent = reversed;
+        }
+    </script>
+</body>
+</html>

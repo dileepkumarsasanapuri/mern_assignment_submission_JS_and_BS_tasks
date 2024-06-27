@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphabetical Order</title>
+</head>
+<body>
+    <h1>Sort String Alphabetically</h1>
+    <p>Original String: <input type="text" id="org_str" oninput="updatingsortedstring()"></p>
+    <p>Sorted String:<span id="sorted_str"></span></p>
+    <script>
+        function sortAlphabeticalorder(Str){
+            return Str.toLowerCase().split('').sort().join('');
+        }
+        function updatingsortedstring(){
+        let samplestring=document.getElementById('org_str').value;
+        let sorted= sortAlphabeticalorder(samplestring);
+        document.getElementById('sorted_str').textContent=sorted;
+        }
+        updatingsortedstring();
+    </script>
+</body>
+</html>
